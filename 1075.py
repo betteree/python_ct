@@ -1,7 +1,5 @@
 
-print("N입력:")
 N= int(input())
-print("P입력:")
 F= int(input())
 
 num1 = N // 100
