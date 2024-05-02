@@ -1,22 +1,31 @@
 N = int(input())
-A = []
-input_values1 = input().split()
-for value in input_values1:
-    A.append(int(value))
+A = list(map(int, input().split()))
+A.sort()
 
 M = int(input())
-B = []
-input_values2 = input().split()
-for value in input_values2:
-    B.append(int(value))
+B = list(map(int, input().split()))
 
+i = 0
 
-for i in range(M):  
-    found = 0
-    for j in range(N):  
-        if B[i] == A[j]:
-            print(1)
-            found = 1
+while i < len(B):
+    low = 0
+    high = len(A) - 1
+    found = False
+
+    while low <= high:
+        mid = (low + high) // 2  # 중간 인덱스 계산
+
+        if A[mid] < B[i]:
+            low = mid + 1  # 중간 값보다 크므로 오른쪽 부분 탐색
+        elif A[mid] > B[i]:
+            high = mid - 1  # 중간 값보다 작으므로 왼쪽 부분 탐색
+        else:
+            found = True
             break
-    if not found:
+
+    if found:
+        print(1)
+    else:
         print(0)
+
+    i += 1
