@@ -1,19 +1,17 @@
-N,M =map(int,input().split())
+N,K =map(int,input().split())
+list_A=[]
+for i in range(N):
+    list_A.append(i+1)
 
-a=[]
-b=[]
+print("<",end="")
+for i in range(N):
+    index =((i+1)*K) % len(list_A) -1
+    
+    if index<0:
+        index += len(list_A)
 
-for i in range(M):
-    x,y=map(int,input().split())
-    a.append(x)
-    b.append(y)
-
-if min(a) < 6*min(b):
-    if min(a) < (N%6)*min(b):
-        print((N//6)*min(a) + min(a))
+    a = list_A.pop(index)
+    if i < N-1:
+        print(a, end=",")
     else:
-        print((N//6)*min(a)+(N%6)*min(b))
-
-else:
-    print(N*min(b))
-
+        print(a,end=">")
