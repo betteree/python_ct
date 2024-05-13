@@ -4,8 +4,8 @@ A.sort()
 
 M = int(input())
 B = list(map(int, input().split()))
-
 i = 0
+
 
 while i < len(B):
     low = 0
