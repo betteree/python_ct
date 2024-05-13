@@ -1,17 +1,16 @@
 N = int(input())
-a =0
+a =666
 cnt =0
 
 
 
-while(1):
-
+while(1):  
     
-    cnt += 1
-    a += 1
-    if ("666" in str(a)) and cnt == N:
+    if ("666" in str(a)):
+        cnt += 1
+    if cnt == N:
         break
-
+    a+=1
     
 
 print(a)
