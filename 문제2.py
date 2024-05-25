@@ -1,14 +1,7 @@
-a = list(input())
+N= int(input())
+str1 =''
 
-flag=1
-for i in range(len(a)//2):
-
-    if a[i] == a[-1-i]:
-        continue
-    else:
-        flag =0
-        break
-
-
-
-print(flag)
+for i in range(1,N+1):
+    str1= str1+ str(i)
+  
+print(len(str1))

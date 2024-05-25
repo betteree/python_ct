@@ -6,10 +6,16 @@ for i in range(N):
     a = input()
     dict1[a] = dict1.get(a,0) +1
 
-n1= dict(sorted(dict1.items()))
+ans = max(dict1.values())
 
-print(next(iter(n1.keys())))
+result = []
+for book in dict1.items():
+    if book[1] == ans:
+        result.append(book[0])
 
+result.sort()
+
+print(result[0])
         
 
 
